@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api-database:
+    image: mongo
+    container_name: "api-database"
+    ports:
+      - 27017:27017
+  mongo-api:
+    image: antoinemercier/mongo-api
+    ports:
+      - 9091:8080
+    links:
+      - api-database
